@@ -721,6 +721,10 @@ nav.scrolled {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    * {
+        margin: 0;
+        padding: 0;
+    }
     .nav-links {
         display: none;
         flex-direction: column;
