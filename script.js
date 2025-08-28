@@ -95,7 +95,13 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-    
+
+    window.addEventListener("scroll", () => {
+    document.querySelectorAll(".parallax-bg").forEach(bg => {
+    bg.style.setProperty("--scrollY", `${window.scrollY * 0.2}px`);
+  });
+});
+                    
     window.addEventListener('scroll', updateActiveNavLink);
     
     // Intersection Observer for animations
