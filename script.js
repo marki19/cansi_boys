@@ -31,4 +31,28 @@ document.addEventListener('DOMContentLoaded', () => {
             behavior: 'smooth'
         });
     });
+
+    // Slideshow Functionality
+    let slideIndex = 0;
+    const slides = document.querySelectorAll('.slide');
+
+    function showSlides() {
+        // Hide all slides
+        slides.forEach(slide => {
+            slide.classList.remove('active');
+        });
+
+        // Increment index and loop back if needed
+        slideIndex++;
+        if (slideIndex > slides.length) {
+            slideIndex = 1;
+        }
+
+        // Show the current slide
+        slides[slideIndex - 1].classList.add('active');
+    }
+
+    // Initialize the slideshow and set interval
+    showSlides(); // Show the first slide immediately
+    setInterval(showSlides, 5000); // Change image every 5 seconds
 });

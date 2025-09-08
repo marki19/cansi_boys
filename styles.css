@@ -255,6 +255,67 @@ nav {
     padding: 6rem 0;
 }
 
+/* Product Gallery - Parallax Slideshow */
+.product-gallery {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 0;
+    text-align: center;
+}
+.product-gallery::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+.slideshow-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* This property creates the parallax effect */
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.gallery-content {
+    position: relative;
+    z-index: 2;
+    padding: 1rem;
+    text-shadow: 2px 2px 7px rgba(0, 0, 0, 0.6);
+    color: var(--light-text-color);
+}
+
+.gallery-content h2::after {
+    background-color: var(--light-text-color);
+}
+
+
 /* Recipe Section */
 .recipe-section {
     color: var(--light-text-color);
@@ -487,6 +548,44 @@ nav {
     z-index: 1;
 }
 .timeline-item:last-child { margin-bottom: 0; }
+
+.insights-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.insight-card {
+  background: var(--card-background);
+  padding: 2.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-light);
+  transition: var(--transition);
+  text-align: center;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.insight-card:hover {
+  transform: var(--transform-up);
+  box-shadow: var(--shadow-heavy);
+}
+.insight-icon {
+  font-size: 3rem;
+  color: var(--accent-color);
+  margin-bottom: 1rem;
+}
+.insight-card h4 {
+  color: var(--secondary-color);
+  margin-top: 0;
+}
+.insight-card p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
 
 /* Feedback Section */
 .feedback-grid {
